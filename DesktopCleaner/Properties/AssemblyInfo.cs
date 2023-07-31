@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("DesktopCleaner")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DesktopCleaner")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyCompany("Vinnytsia Technical Lyceum")]
+[assembly: AssemblyProduct("Desktop cleaner")]
+[assembly: AssemblyCopyright("Copyright © Vinnytsia Technical Lyceum 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
