@@ -27,8 +27,7 @@ namespace DesktopCleaner
                     Assembly.GetExecutingAssembly().GetName().Name,
                     Assembly.GetExecutingAssembly().GetName().Version));
 
-                // Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
-                CleanDirectory(new DirectoryInfo("C:\\Users\\Administrator\\Desktop\\test"));
+                CleanDirectory(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)));
             }
             catch (Exception ex)
             {
