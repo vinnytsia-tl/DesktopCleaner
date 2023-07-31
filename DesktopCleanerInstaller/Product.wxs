@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define DesktopCleanerBinDir="$(var.SolutionDir)\DesktopCleaner\bin\$(var.Configuration)"?>
+
+	<Product Id="*" Name="Desktop Cleaner" Language="1033" UpgradeCode="{E57EF2CC-83A3-4BDB-B677-E1EADDCDED04}"
+			 Version="1.0.0.0" Manufacturer="Vinnytsia Technical Lyceum">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="Desktop Cleaner" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="DesktopCleaner" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id ="set_enviroment" Guid="{F4C7F936-A63B-4BB0-A73E-D33CC4E94114}">
+				<CreateFolder />
+				<Environment Id="SET_PATH" Action="set" Name="PATH" Part="last" Permanent="no" System="yes" Value="[INSTALLFOLDER]" />
+			</Component>
+			<Component Id="desktop_cleaner_exe" Guid="{AB970744-0911-4477-9660-9D37811074D6}">
+				<File Id="desktop_cleaner_exe" Source="$(var.DesktopCleanerBinDir)\DesktopCleaner.exe" KeyPath="yes"/>
+			</Component>
+			<Component Id="desktop_cleaner_pdb" Guid="{31077ABB-31F7-43D3-8299-71BA547D5313}">
+				<File Id="desktop_cleaner_pdb" Source="$(var.DesktopCleanerBinDir)\DesktopCleaner.pdb" KeyPath="yes"/>
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
