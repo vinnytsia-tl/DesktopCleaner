@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{31AFADD2-9C80-41FC-9D9E-7E757D710EC5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>DesktopCleaner</RootNamespace>
     <AssemblyName>DesktopCleaner</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
